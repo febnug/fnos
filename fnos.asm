@@ -5,7 +5,7 @@
 ;               v.0.0-beta
 
 
-%include "base.inc"
+%include "lib/base.inc"
 %include "game/tetranglix.asm"
 ORG BASE_RUN_OFS
 
