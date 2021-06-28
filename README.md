@@ -6,4 +6,7 @@
 ```
 Sistem operasi sederhana berbasis CLI di tulis dari awal menggunakan bahasa assembly
 
-Status : sedang dibuat
+---
+
+
+
