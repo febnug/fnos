@@ -25,16 +25,37 @@ start:
     mov     al, ">"
     int     10h
 
+    mov     ah, 0eh
+    mov     al, " "
+    int     10h
 
+ _loop:
     xor     ah, ah
-    int     16h
-    cmp     al, 'r'
-    je      reboot
-    cmp     al, 's'
-    je      shutdown
-    cmp     al, 't'
+    int     16h 
+    mov     ah, 0eh
+    int     10h
+    mov     bl, al 
+    jmp     tukar_char
+lanjut:
+    cmp     al, 0dh
+    je      compare_input
+    jmp     _loop
+tukar_char:
+    xchg    cl, bl
+    jmp     lanjut   
+compare_input:
+    cmp     bl, "t"
     je      tetris
-
+    cmp     bl, "T"
+    je      tetris
+    cmp     bl, "s"
+    je      shutdown
+    cmp     bl, "S"
+    je      shutdown 
+    cmp     bl, "r"
+    je      reboot
+    cmp     bl, "R"
+    je      reboot
 
     jmp     $            ; Jump here - infinite loop!
 
