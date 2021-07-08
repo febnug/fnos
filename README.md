@@ -9,7 +9,7 @@ A very <b><code>dumb</code></b> simple operating system CLI based, written from 
 ---
 
 <h3>Preview</h3>
-<img src="https://github.com/febnug/fnos/blob/10b30e7b04d87ffc0db16328210a989cf366f72e/fnos-preview.png"/>
+...
 
 <h3>How to build</h3>
 
