@@ -35,7 +35,7 @@ start:
 ;    je      main_os
     
 
-    jmp     $
+ ;   jmp     $
 
 
 bersihkan_layar_0:
