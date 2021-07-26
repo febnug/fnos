@@ -1,4 +1,4 @@
- %include "fungsi.asm"
+%include "fungsi.asm"
 
  main_os:
     call    bersihkan_layar_1
