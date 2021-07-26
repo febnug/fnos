@@ -24,46 +24,15 @@ start:
     mov     bh, 0x0F    
     int     0x10
 
+; TODO :
+;   1. need something useless
 
-; DB
-; DC
-; DE
-; DD
-; DF
-
-    
-
-    mov     ah, 0x02
-    mov     dh, 10
-    mov     dl, 38
-    xor     bh, bh
-    int     0x10  
-      
-    mov     ah, 0x09
-    mov     al, 0xFE
-    xor     bh, bh
-    mov     bl, 0x0F
-    mov     cx, 1
-    int     0x10
-
-    mov     ah, 0x02
-    mov     dh, 09
-    mov     dl, 39
-    xor     bh, bh
-    int     0x10  
-      
-    mov     ah, 0x09
-    mov     al, 0xFE
-    xor     bh, bh
-    mov     bl, 0x0F
-    mov     cx, 1
-    int     0x10
-    
+    jmp     main_os   
  
-    xor     ah, ah
-    int     0x16 
-    cmp     al, 0x0d
-    je      main_os
+;    xor     ah, ah
+;    int     0x16 
+;    cmp     al, 0x0d
+;    je      main_os
     
 
     jmp     $
