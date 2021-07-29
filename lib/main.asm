@@ -30,15 +30,22 @@ _input:
     je      _baris_selanjutnya
     cmp     al, "t"
     je      _cetak
+    jne      _cetak
     cmp     al, "T"
     je      _cetak
+    jne      _cetak
     cmp     al, "s"
     je      _cetak
+    jne      _cetak
     cmp     al, "S"
     je      _cetak
+    jne      _cetak
     cmp     al, "r"
     je      _cetak
+    jne      _cetak
     cmp     al, "R"
+    je      _cetak
+    jne      _cetak
 _baris_selanjutnya:
     inc     dh 
     push    dx
