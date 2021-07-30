@@ -9,7 +9,7 @@ A very <b><code>dumb</code></b> simple operating system CLI based, written from 
 ---
 
 <h3>Preview</h3>
-...
+Soon
 
 <h3>How to build</h3>
 
@@ -26,7 +26,7 @@ qemu-system-i386 -drive format=raw,file=./fnos-beta.img
 ```
 
 <h3>How to use</h3>
-My operating system only plays tetris game (<a href="https://github.com/shikhin/tetranglix">tetranglix</a>), you can press <code>t</code>, <code>s</code> for shutdown, <code>r</code> for reboot on your keyboard. So nothing special right ? :)
+Soon
 
 
 
