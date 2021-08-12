@@ -9,7 +9,7 @@ A very <b><code>dumb</code></b> simple minimal operating system, written from sc
 ---
 
 <h3>Preview</h3>
-Soon
+<img src = "https://github.com/febnug/fnos/blob/main/screenshoot/fnos.png"/>
 
 <h3>How to build</h3>
 
