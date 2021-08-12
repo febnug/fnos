@@ -73,6 +73,10 @@ compare_input:
     je      tetris
     cmp     bl, "T"
     je      tetris
+    cmp     bl, "a"
+    je      about
+    cmp     bl, "A"
+    je      about
 _backspace: 
     xor     al, al
     jmp     _cetak 
