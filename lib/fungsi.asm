@@ -84,3 +84,20 @@ cetak_string:
     jmp     .repeat
 .done:
     ret
+    
+; ==============================
+
+intro:
+    db  13, 10, "  "
+    db  13, 10, "  "
+    db  13, 10, "  "
+    db  13, 10, " _____ _____ _____ _____"
+    db  13, 10, "|   __|   | |     |   __|"
+    db  13, 10, "|   __| | | |  |  |__   |"
+    db  13, 10, "|__|  |_|___|_____|_____|"
+    db  13, 10, "Sistem operasi minimalis sederhana"
+    db  13, 10, "oleh Febriyanto Nugroho"
+    db  13, 10, "  "
+    db  13, 10, "t -- Bermain tetris"
+    db  13, 10, "? -- Info"
+    db  13, 10, "! -- Tentang", 0x0
