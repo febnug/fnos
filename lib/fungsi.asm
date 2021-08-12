@@ -95,9 +95,57 @@ intro:
     db  13, 10, "|   __|   | |     |   __|"
     db  13, 10, "|   __| | | |  |  |__   |"
     db  13, 10, "|__|  |_|___|_____|_____|"
-    db  13, 10, "Sistem operasi minimalis sederhana"
-    db  13, 10, "oleh Febriyanto Nugroho"
+    db  13, 10, "by Febriyanto Nugroho"
     db  13, 10, "  "
-    db  13, 10, "t -- Bermain tetris"
-    db  13, 10, "? -- Info"
-    db  13, 10, "! -- Tentang", 0x0
+    db  13, 10, "t -- Playing tetris"
+    db  13, 10, "i -- Info"
+    db  13, 10, "a -- About", 0x0
+ 
+about:
+    call    bersihkan_layar_2
+
+    mov     ah, 0x6   
+    xor     al, al    
+    xor     cx, cx    
+    mov     dx, 0x184F  
+    mov     bh, 0x0F    
+    int     0x10
+
+    mov     ah, 0x01
+    mov     cx, 16
+    int     0x10
+
+    mov     ah, 0x02
+    mov     dh, 0x00
+    xor     dl, dl
+    xor     bh, bh
+    int     0x10
+ 
+    mov     si, intro
+    call    cetak_string
+    
+    mov     ah, 0x02
+    mov     dh, 0x10
+    xor     dl, dl
+    xor     bh, bh
+    int     0x10
+
+    mov     si, teks_tentang
+    call    cetak_string
+
+    xor     ah, ah
+    int     0x16 
+    cmp     al, 0x0d
+    je      main_os
+
+
+teks_tentang:
+    db  13, 10, "This is very dumb simple minimal operating system by Febriyanto Nugroho,"
+    db  13, 10, "written from scratch using x86 assembly language 16-bit Real Mode 8086."
+    db  13, 10, "It was written in order to learn about 8086 it quite likely"
+    db  13, 10, "will serve no use for you :)."
+    db  13, 10, "  "
+    db  13, 10, "You know ?, this very dumb simple minimal operating system is dedicated"
+    db  13, 10, "for my parents with initial H and S and my sister with initial N."
+    db  13, 10, "Press 'Enter' to continue.", 0x0
+    
