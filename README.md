@@ -4,7 +4,7 @@
 |   __| | | |  |  |__   |
 |__|  |_|___|_____|_____|  
 ```
-A very <b><code>dumb</code></b> simple operating system CLI based, written from scratch using assembly language.
+A very <b><code>dumb</code></b> simple minimalist operating system, written from scratch using `x86` assembly language (`8086` flavour) real mode.
 
 ---
 
