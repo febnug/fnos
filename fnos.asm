@@ -89,4 +89,7 @@ _input_lagi:
     jmp     _loop
 
 
-    jmp     $
+    cli
+endloop:
+    hlt
+    jmp endloop 
