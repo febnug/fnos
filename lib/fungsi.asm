@@ -1,16 +1,26 @@
-bersihkan_layar_1:
+_1:
     xor     ah, ah
     mov     al, 0x03  ; text mode 80x25 16 colours
     int     0x10
     ret
 
-bersihkan_layar_2:
+_2:
     xor     ah, ah
     mov     al, 0x03  ; text mode 80x25 16 colours
     int     0x10
     ret
 
+_3:
+    xor     ah, ah
+    mov     al, 0x03  ; text mode 80x25 16 colours
+    int     0x10
+    ret
 
+_4:
+    xor     ah, ah
+    mov     al, 0x03  ; text mode 80x25 16 colours
+    int     0x10
+    ret
 
 shutdown:
     mov     ax, 5301
@@ -102,7 +112,7 @@ intro:
     db  13, 10, "a -- About", 0x0
  
 about:
-    call    bersihkan_layar_2
+    call    _2
 
     mov     ah, 0x6   
     xor     al, al    
@@ -148,4 +158,49 @@ teks_tentang:
     db  13, 10, "You know ?, this very dumb simple minimal operating system is dedicated"
     db  13, 10, "for my parents with initial H and S and my sister with initial N."
     db  13, 10, "Press 'Enter' to continue.", 0x0
+ 
+teks_info:
+    db  13, 10, "  "
+    db  13, 10, "You're at : ", 0x0
+
+
+info:
+    call    _3
+
+    mov     ah, 0x6   
+    xor     al, al    
+    xor     cx, cx     
+    mov     dx, 0x184F  
+    mov     bh, 0x0F    
+    int     0x10
+
+    mov     ah, 0x01
+    mov     cx, 16
+    int     0x10
+
+    mov     ah, 0x02
+    mov     dh, 0x09
+    xor     dl, dl
+    xor     bh, bh
+    int     0x10
+ 
+    mov     si, intro
+    call    cetak_string
+
+    mov     ah, 0x02
+    mov     dh, 0x16
+    xor     dl, dl
+    xor     bh, bh
+    int     0x10
+
+    mov     si, teks_info
+    call    cetak_string
+
+    mov     dx, BASE_ABS_ADDR
+    call    print_hex
+
+    xor     ah, ah
+    int     0x16 
+    cmp     al, 0x0d
+    je      main_os
     
