@@ -17,7 +17,7 @@ BITS 16
 start:
 
 main_os:
-    call    bersihkan_layar_1
+    call    _1
 
     mov     ah, 0x6    ; Scroll up function
     xor     al, al    ; Clear entire screen
