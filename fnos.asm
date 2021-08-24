@@ -78,9 +78,9 @@ compare_input:
     cmp     bl, "A"
     je      about
     cmp     bl, "i"
-    je      about
+    je      info
     cmp     bl, "I"
-    je      about
+    je      info
 _backspace: 
     xor     al, al
     jmp     _cetak 
