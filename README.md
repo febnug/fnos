@@ -28,6 +28,9 @@ qemu-system-i386 -drive format=raw,file=./fnos-beta.img
 <h3>How to use</h3>
 Soon
 
+<h3>Status</h3>
+<p>My OS has ben tested using USB stick</p>
+
 <h3>Credit</h3>
 Tetris game taken from <a href="https://github.com/shikhin">Shikhin</a>'s repository, named as <a href="https://github.com/shikhin/tetranglix">Tetranglix</a>
 
