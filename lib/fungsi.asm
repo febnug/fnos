@@ -118,10 +118,6 @@ about:
     mov     bh, 0x0F    
     int     0x10
 
-    mov     ah, 0x01
-    mov     cx, 16
-    int     0x10
-
     mov     ah, 0x02
     mov     dh, 0x00
     xor     dl, dl
