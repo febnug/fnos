@@ -83,6 +83,8 @@ compare_input:
     je      info
     cmp     bl, "I"
     je      info
+    cmp     bl, "d"
+    je      tanggal
 _backspace: 
     xor     al, al
     jmp     _cetak 
