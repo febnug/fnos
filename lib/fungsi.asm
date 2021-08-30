@@ -207,3 +207,104 @@ info:
     cmp     al, 0x0d
     je      main_os
     
+tanggal:
+    call    date
+    call    day
+    call    month
+
+    call    century
+    call    year
+    call    display_date
+
+date:
+;Get date from the system
+    mov     ah, 04h   ;function 04h (get RTC date)
+    int     1ah     ;BIOS Interrupt 1ah (Read Real Time Clock)
+    ret
+
+;CH - Century
+;CL - Year
+;DH - Month
+;DL - Day
+
+month:
+;Converts the system date from BCD to ASCII
+    mov     bh, dh ;copy contents of month (dh) to bh
+    shr     bh, 4
+    add     bh, 30h ;add 30h to convert to ascii
+    mov     [display + 3], bh
+    mov     bh, dh
+    and     bh, 0fh
+    add     bh, 30h
+    mov     [display + 4], bh
+    ret
+
+
+day:
+    mov     bh, dl ;copy contents of day (dl) to bh
+    shr     bh, 4
+    add     bh, 30h ;add 30h to convert to ascii
+    mov     [display + 0], bh
+    mov     bh, dl
+    and     bh, 0fh
+    add     bh, 30h
+    mov     [display + 1], bh
+    ret
+
+century:
+    mov     bh, ch ;copy contents of century (ch) to bh
+    shr     bh, 4
+    add     bh, 30h ;add 30h to convert to ascii
+    mov     [display + 6], bh
+    mov     bh, ch
+    and     bh, 0fh
+    add     bh, 30h
+    mov     [display + 7], bh
+    ret
+
+year:
+    mov     bh, cl ;copy contents of year (cl) to bh
+    shr     bh, 4
+    add     bh, 30h ;add 30h to convert to ascii
+    mov     ch, "/"
+    mov     [display + 2], ch
+    mov     ch, "/"
+    mov     [display + 5], ch
+    mov     [display + 8], bh
+    mov     bh, cl
+    and     bh, 0fh
+    add     bh, 30h
+    mov     [display + 9], bh
+    ret
+
+
+display: 
+    db "00/00/0000"
+
+display_date:
+    mov     ah, 0x6   
+    xor     al, al    
+    xor     cx, cx     
+    mov     dx, 0x184F  
+    mov     bh, 0x0F    
+    int     0x10
+
+;Display the system date
+
+    mov     ah, 13h ;function 13h (Display String)
+    xor     al, al ;Write mode is zero
+    xor     bh, bh ;Use video page of zero
+    mov     bl, 0xf0 ;Attribute
+    mov     cx, 10 ;Character string is 10 long
+    mov     dh, 11 ;position on row 4
+    mov     dl, 34 ;and column 28
+    push    ds ;put ds register on stack
+    pop     es ;pop it into es register
+    lea     bp, [display] ;load the offset address of string into BP
+    int     10h
+
+    xor     ah, ah
+    int     0x16 
+    cmp     al, 0x0d
+    je      main_os
+    
