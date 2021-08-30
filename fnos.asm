@@ -26,27 +26,29 @@ main_os:
     mov     bh, 0x0F    ; Black & White
     int     0x10
 
-
-
     mov     ah, 0x02
     mov     dh, 0x09
     xor     dl, dl
     xor     bh, bh
     int     0x10
  
+    mov     cx, 0x8
+    mov     ah, 0x0e
+.loop:
+    mov     al, 13
+    int     0x10
+    mov     al, 10
+    int     0x10
+    dec     cx
+    jnz     .loop
 
     mov     si, intro
     call    cetak_string   
-
 
     mov     ah, 0x02
     mov     dh, 0x18
     xor     dl, dl
     xor     bh, bh
-    int     0x10
-
-    mov     ah, 0x01
-    mov     cx, 16
     int     0x10
 
 _loop:
