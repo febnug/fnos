@@ -98,9 +98,6 @@ cetak_string:
 ; ==============================
 
 intro:
-    db  13, 10, "  "
-    db  13, 10, "  "
-    db  13, 10, "  "
     db  13, 10, " _____ _____ _____ _____"
     db  13, 10, "|   __|   | |     |   __|"
     db  13, 10, "|   __| | | |  |  |__   |"
@@ -130,6 +127,16 @@ about:
     xor     dl, dl
     xor     bh, bh
     int     0x10
+ 
+    mov     cx, 0x8
+    mov     ah, 0x0e
+__loop:
+    mov     al, 13
+    int     0x10
+    mov     al, 10
+    int     0x10
+    dec     cx
+    jnz     __loop
  
     mov     si, intro
     call    cetak_string
