@@ -297,7 +297,7 @@ display_date:
     mov     bl, 0xf0 ;Attribute
     mov     cx, 10 ;Character string is 10 long
     mov     dh, 11 ;position on row 4
-    mov     dl, 34 ;and column 28
+    mov     dl, 35 ;and column 28
     push    ds ;put ds register on stack
     pop     es ;pop it into es register
     lea     bp, [display] ;load the offset address of string into BP
