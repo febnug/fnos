@@ -308,3 +308,57 @@ display_date:
     cmp     al, 0x0d
     je      main_os
     
+waktu:
+    mov     ah, 0x6    
+    xor     al, al    
+    xor     cx, cx     
+    mov     dx, 0x184F  
+    mov     bh, 0x0F    
+    int     0x10
+
+    call    time
+
+    mov     al, ch
+    call    cvt
+    mov     [tmfld + 0], ax
+    mov     al, cl
+    call    cvt
+    mov     [tmfld + 3], ax
+    mov     al, dh
+    call    cvt
+    mov     [tmfld + 6], ax
+
+    call    dsptime
+
+time:
+    mov     ah, 0x02
+    int     0x1a
+    ret
+
+cvt:
+    mov     ah, al
+    shr     al, 4
+    and     ah, 0x0F
+    add     ax, 0x3030
+    ret
+
+tmfld:  db '00:00:00'
+
+dsptime:
+    mov     ah, 0x13
+    mov     al, 0
+    mov     bh, 0
+    mov     bl, 0x0F
+    mov     cx, 8
+    mov     dh, 11
+    mov     dl, 35
+    push    ds
+    pop     es
+    mov     bp, tmfld
+    int     0x10
+
+    xor     ah, ah
+    int     0x16 
+    cmp     al, 0x0d
+    je      main_os
+    ret
