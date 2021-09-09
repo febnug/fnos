@@ -164,7 +164,7 @@ teks_tentang:
  
 teks_info:
     db  13, 10, "  "
-    db  13, 10, "You're at : ", 0x0
+    db  13, 10, "You're at ", 0x0
 
 
 info:
@@ -182,7 +182,7 @@ info:
     int     0x10
 
     mov     ah, 0x02
-    mov     dh, 0x09
+    mov     dh, 0x10
     xor     dl, dl
     xor     bh, bh
     int     0x10
