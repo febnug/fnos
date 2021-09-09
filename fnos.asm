@@ -73,18 +73,14 @@ tukar_char:
 compare_input:
     cmp     bl, "t"
     je      tetris
-    cmp     bl, "T"
-    je      tetris
     cmp     bl, "a"
-    je      about
-    cmp     bl, "A"
     je      about
     cmp     bl, "i"
     je      info
-    cmp     bl, "I"
-    je      info
     cmp     bl, "d"
     je      tanggal
+    cmp     bl, "w"
+    je      waktu
 _backspace: 
     xor     al, al
     jmp     _cetak 
