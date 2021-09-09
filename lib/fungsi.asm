@@ -239,7 +239,6 @@ month:
     mov     [display + 4], bh
     ret
 
-
 day:
     mov     bh, dl ;copy contents of day (dl) to bh
     shr     bh, 4
@@ -266,9 +265,6 @@ year:
     mov     bh, cl ;copy contents of year (cl) to bh
     shr     bh, 4
     add     bh, 30h ;add 30h to convert to ascii
-    mov     ch, "/"
-    mov     [display + 2], ch
-    mov     ch, "/"
     mov     [display + 5], ch
     mov     [display + 8], bh
     mov     bh, cl
@@ -279,7 +275,7 @@ year:
 
 
 display: 
-    db "00/00/0000"
+    db "00-00-0000"
 
 display_date:
     mov     ah, 0x6   
