@@ -8,6 +8,7 @@
 
 %include "lib/base.inc"
 %include "game/tetranglix.asm"
+%include "game/tix.asm"
 %include "lib/fungsi.asm"
 
 ORG BASE_RUN_OFS
@@ -81,6 +82,8 @@ compare_input:
     je      tanggal
     cmp     bl, "w"
     je      waktu
+    cmp     bl, "x"
+    je      tix
 _backspace: 
     xor     al, al
     jmp     _cetak 
