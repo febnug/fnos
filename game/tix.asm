@@ -113,8 +113,8 @@ _char_x:
     jmp    _cetak
 _char_o:
     mov     al, "o"
-    jmp    _cetak
-_cetak:
+    jmp    @_cetak
+@_cetak:
     mov     ah, 02h
     xor     bh, bh
     int     10h
@@ -132,15 +132,15 @@ _spasi:
     jmp     i
 
 
-cetak_string:           
+@cetak_string:           
     mov     ah, 0x0e    
-.repeat:
+@.repeat:
     lodsb           
     test    al, al
-    je      .done       
+    je      @.done       
     int     0x10         
-    jmp     .repeat
-.done:
+    jmp     @.repeat
+@.done:
     ret
 
     
@@ -152,9 +152,3 @@ tic_tac_toe_layout:
     db 13, 10,  "+---+---+---+"
     db 13, 10,  "|   |   |   |"
     db 13, 10,  "+---+---+---+", 0x0, 0x00
-
-
-    cli
-endloop:
-    hlt
-    jmp     endloop
