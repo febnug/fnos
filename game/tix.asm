@@ -6,7 +6,7 @@ tix:
     mov     bh, 00Fh    
     int     10h
 
-cetak_tic_tac_toe_layout:
+@cetak_tic_tac_toe_layout:
     mov     ah, 02h
     xor     dh, dh
     xor     dl, dl
@@ -16,8 +16,9 @@ cetak_tic_tac_toe_layout:
     mov     si, tic_tac_toe_layout
     call    @cetak_string
 
+
     mov     dh, 7 
-lanjut:
+_lanjut:
     mov     ah, 0x02 
     push    dx
     xor     bh, bh
@@ -124,7 +125,7 @@ _char_o:
     pop     dx
     inc     dh
     push    dx
-    jmp     lanjut    
+    jmp     _lanjut    
 _spasi:   
     mov     al, 20h
     int     10h  
