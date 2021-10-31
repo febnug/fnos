@@ -14,7 +14,7 @@ cetak_tic_tac_toe_layout:
     int     10h
 
     mov     si, tic_tac_toe_layout
-    call    cetak_string
+    call    @cetak_string
 
     mov     dh, 7 
 lanjut:
