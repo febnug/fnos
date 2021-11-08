@@ -53,7 +53,7 @@ load_base:
     mov     ds, ax
     mov     es, ax
 
-    jmp BASE_RUN_SEG:BASE_RUN_OFS
+    jmp     BASE_RUN_SEG:BASE_RUN_OFS
 
 .disk_error:
     xor     ah, ah                  
@@ -116,7 +116,7 @@ lba_to_chs:
 ; sectorsPerTrack: dw 18
 
 bootDevice:      db 0x00
-diskErrorMsg:    db "Unrecoverable disk error!", 0
+diskErrorMsg:    db "!", 0
 
 
 TIMES 510-($-$$) db  0
