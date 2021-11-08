@@ -26,7 +26,7 @@ qemu-system-i386 -rtc base=localtime,clock=vm -drive format=raw,file=./fnos-beta
 ```
 
 <h3>How to use</h3>
-Soon
+Command list at <a href="https://github.com/febnug/fnos/blob/main/fnos.asm#L74:L86">fnos.asm</a> 
 
 <h3>Status</h3>
 <p>My OS has ben tested using USB stick</p>
