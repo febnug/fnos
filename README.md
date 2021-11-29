@@ -22,7 +22,7 @@ make
 Using <a href="https://github.com/qemu/qemu">QEMU</a> :
 
 ```
-qemu-system-i386 -rtc base=localtime,clock=vm -drive format=raw,file=./fnos-beta.img
+qemu-system-i386 -rtc base=localtime,clock=vm -drive format=raw,file=./fnos.img
 ```
 
 <h3>How to use</h3>
