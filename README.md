@@ -28,9 +28,6 @@ qemu-system-i386 -rtc base=localtime,clock=vm -drive format=raw,file=./fnos.img
 <h3>How to use</h3>
 Command list at <a href="https://github.com/febnug/fnos/blob/main/fnos.asm#L74:L86">fnos.asm</a> 
 
-<h3>Status</h3>
-<p>My OS has ben tested using USB stick</p>
-
 <h3>Credit</h3>
 Tetris game taken from <a href="https://github.com/shikhin">Shikhin</a>'s repository, named as <a href="https://github.com/shikhin/tetranglix">Tetranglix</a>
 
