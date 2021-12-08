@@ -4,7 +4,7 @@
 |   __| | | |  |  |__   |
 |__|  |_|___|_____|_____|  
 ```
-A very <b><code>dumb</code></b> simple minimal operating system, written from scratch using `x86` assembly language (`8086` flavour) real mode.
+A very <b><code>dumb</code></b> simple minimal operating system, written from scratch using `x86` (`8086`) assembly language.
 
 ---
 
@@ -26,7 +26,7 @@ qemu-system-i386 -rtc base=localtime,clock=vm -drive format=raw,file=./fnos.img
 ```
 
 <h3>How to use</h3>
-Command list at <a href="https://github.com/febnug/fnos/blob/main/fnos.asm#L74:L86">fnos.asm</a> 
+See command list at <a href="https://github.com/febnug/fnos/blob/main/fnos.asm#L74:L86">fnos.asm</a> 
 
 <h3>Credit</h3>
 Tetris game taken from <a href="https://github.com/shikhin">Shikhin</a>'s repository, named as <a href="https://github.com/shikhin/tetranglix">Tetranglix</a>
