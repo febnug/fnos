@@ -1,11 +1,15 @@
-%include "lib/base.inc"
+; Base FNOS
+;
+; -------------------
+;
+; btw, this is copying and pasting from stack overflow :)
+; 
 
-BASE_LOAD_SEG  equ BASE_ABS_ADDR>>4
-                                
-BASE_LBA_START equ 1          
-                                
-BASE_LBA_END   equ BASE_LBA_START + NUM_BASE_SECTORS
-                                
+%include "lib/base.inc" ; oh, this is base 
+
+BASE_LOAD_SEG  equ BASE_ABS_ADDR>>4                              
+BASE_LBA_START equ 1                                   
+BASE_LBA_END   equ BASE_LBA_START + NUM_BASE_SECTORS                              
 DISK_RETRIES     equ 3         
 
 bits 16
