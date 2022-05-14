@@ -99,4 +99,4 @@ _input_lagi:
     cli
 endloop:
     hlt
-    jmp endloop 
+    jmp     endloop 
