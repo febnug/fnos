@@ -43,7 +43,7 @@ main_os:
     dec     cx
     jnz     .loop
 
-    mov     si, intro
+    mov     si, logo
     call    cetak_string   
 
     mov     ah, 0x02
