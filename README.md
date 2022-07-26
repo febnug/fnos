@@ -30,6 +30,7 @@ See command list at <a href="https://github.com/febnug/fnos/blob/main/fnos.asm#L
 
 <h3>Credit</h3>
 Tetris game taken from <a href="https://github.com/shikhin">Shikhin</a>'s repository, named as <a href="https://github.com/shikhin/tetranglix">Tetranglix</a>
+<p>Heart graphic taken from <a href="https://github.com/nanochess/">Oscar Toledo</a>'s repository, named as <a href="https://github.com/nanochess/heart">Heart</a></p>
 
 
 
