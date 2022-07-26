@@ -103,10 +103,7 @@ logo:
     db  13, 10, "|   __| | | |  |  |__   |"
     db  13, 10, "|__|  |_|___|_____|_____|"
     db  13, 10, "by Febriyanto Nugroho"
-    db  13, 10, "  "
-    db  13, 10, "t -- Playing tetris"
-    db  13, 10, "i -- Info"
-    db  13, 10, "a -- About", 0x0
+    db  13, 10, "  ", 0x0
  
 about:
     call    _2
@@ -134,7 +131,7 @@ __loop:
     dec     cx
     jnz     __loop
  
-    mov     si, intro
+    mov     si, logo
     call    cetak_string
     
     mov     ah, 0x02
@@ -187,7 +184,7 @@ info:
     xor     bh, bh
     int     0x10
  
-    mov     si, intro
+    mov     si, logo
     call    cetak_string
 
     mov     ah, 0x02
