@@ -10,6 +10,7 @@
 %include "game/tetranglix.asm"
 %include "game/tix.asm"
 %include "lib/fungsi.asm"
+%include "lib/pi.asm"
 
 ORG BASE_RUN_OFS
 
