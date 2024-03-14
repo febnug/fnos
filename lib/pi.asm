@@ -17,6 +17,13 @@ arr:	equ $+0x0200
 	push cs
 	pop es
 
+    mov     ah, 0x6	; Scroll up function
+    xor     al, al	; Clear entire screen
+    xor     cx, cx	; Upper left corner CH=row, CL=column
+    mov     dx, 0x184F  ; lower right corner DH=row, DL=column
+    mov     bh, 0x0F    ; Black & White
+    int     0x10
+
 	mov di,arr	; Point to arr
 	mov cx,digits+1	; Total digits plus one
 	mov ax,arrinit	; Starting value
