@@ -85,6 +85,8 @@ compare_input:
     je      waktu
     cmp     bl, "x"
     je      tix
+    cmp     bl, "p"
+    je      pi
 _backspace: 
     xor     al, al
     jmp     _cetak 
